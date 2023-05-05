@@ -1,0 +1,22 @@
+{
+    "Print to console": {
+        "scope": "javascript,typescript,javascriptreact, typescriptreact",
+        "prefix": "clg",
+        "body": ["console.log($1)"]
+    },
+    "Max media width": {
+        "scope": "css, scss",
+        "prefix": "mmw",
+        "body": ["@media(max-width: $1px) {", "    $2 {", "        $3", "    }", "}"]
+    },
+    "React functional component": {
+        "scope": "javascript,javascriptreact",
+        "prefix": "rfc",
+        "body": ["const $1 = () => {", "", "    $2", "", "    return (", "        <div>$3</div>", "    );", "};", "export default $1;"]
+    },
+    "React-typescript functional component": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "rtfc",
+        "body": ["const $1: React.FC$4 = () => {", "", "    $2", "", "    return (", "        <div>$3</div>", "    );", "};", "export default $1;"]
+    }
+}

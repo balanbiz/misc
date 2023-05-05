@@ -1,0 +1,34 @@
+.spoller {
+	margin-bottom: 60px;
+
+	&__item {
+		margin-bottom: 25px;
+		position: relative;
+	}
+
+	&__title {
+		font-size: 24px;
+		margin-bottom: 5px
+	}
+
+	&__text {
+		font-size: 18px;
+	}
+	&._init .spoller__title::before,
+	&._init .spoller__title::after {
+		content: '';
+		width: 20px;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		right: 10px;
+		top: 20px;
+		transition: transform 0.3s ease 0s;
+	}
+	&._init .spoller__title::after {
+		transform: rotate(-90deg);
+	}
+	&._init .spoller__title._active::after {
+		transform: rotate(0deg);
+	}
+}
