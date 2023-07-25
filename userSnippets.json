@@ -17,6 +17,46 @@
     "React-typescript functional component": {
         "scope": "typescript, typescriptreact",
         "prefix": "rtfc",
-        "body": ["const $1: React.FC$4 = () => {", "", "    $2", "", "    return (", "        <div>$3</div>", "    );", "};", "export default $1;"]
+        "body": [
+            "import { FC } from 'react'",
+            "",
+            "interface I${TM_FILENAME_BASE}Props {",
+            "    $1",
+            "}",
+            "",
+            "const $TM_FILENAME_BASE: FC<I${TM_FILENAME_BASE}Props> = ({$2}) => {",
+            "",
+            "    return <div>$TM_FILENAME_BASE</div>",
+            "}",
+            "",
+            "export default $TM_FILENAME_BASE"
+        ]
+    },
+    "React-typescript useState": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "rtus",
+        "body": ["const [${1}, set${1/(.)(.*)/${1:/capitalize}${2}/}] = useState<$3>($2)"]
+    },
+    "Ract-typescript-api post": {
+        "scope": "typescript, typescriptreact",
+        "prefix": "rtap",
+        "body": [
+            "export async function POST(req: Request) {",
+            "  try {",
+            "    const body = await req.json();",
+            "    $1",
+            "    return new Response(JSON.stringify(body));",
+            "  } catch (error) {",
+            "    if (error instanceof Error) {",
+            "      throw new Error(error.message);",
+            "    }",
+            "  }",
+            "}"
+        ]
+    },
+    "Import styled components": {
+        "scope": "typescript, typescriptreact, javascript, javascriptreact",
+        "prefix": "isc",
+        "body": ["import { styled } from 'styled-components';"]
     }
 }
